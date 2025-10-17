@@ -1,8 +1,6 @@
-/* Odświeżone style dla trybu jasnego (light mode) */
-
 body {
   margin: 0;
-  padding: 0 20px 0 90px; /* Twoje ustawienie dla desktopu */
+  padding: 0 20px 0 90px;
   background-color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
@@ -18,12 +16,10 @@ h1 {
   letter-spacing: 1px;
 }
 
-/* --- STYLIZACJA WYSUWANEJ NAWIGACJI --- */
-
 nav {
   position: fixed;
   top: 0;
-  left: -175px; /* Twoje ustawienie dla desktopu */
+  left: -175px;
   width: 250px;
   height: 100vh;
   background-color: #f7fafc;
@@ -32,8 +28,6 @@ nav {
   transition: left 0.4s ease-in-out;
   z-index: 1000;
 }
-
-/* ... reszta stylów pozostaje bez zmian ... */
 
 nav:hover {
   left: 0;
@@ -87,66 +81,44 @@ nav:hover .nav-text {
   transition-delay: 0.2s;
 }
 
-/* ================================================= */
-/* --- SEKCJA RESPONSYWNOŚCI (MEDIA QUERIES) --- */
-/* ================================================= */
-
-/* Style dla ekranów o szerokości do 768px (tablety i telefony) */
 @media (max-width: 768px) {
   body {
-    /* Zmniejszamy padding, aby zrobić więcej miejsca na treść */
     padding: 0 15px 0 75px;
   }
 
   h1 {
-    /* Zmniejszamy rozmiar nagłówka, aby nie dominował na małym ekranie */
     font-size: 2.2rem;
     margin-top: 30px;
   }
 
   nav {
-    /* Zmniejszamy szerokość wysuniętego menu, aby nie zajmowało całego ekranu */
     width: 220px;
-    /* Dostosowujemy pozycję zwiniętego menu, aby widoczny fragment był węższy */
-    left: -160px; /* (220px - 60px widocznego fragmentu) */
+    left: -160px;
   }
 
   nav a {
-    /* Zmniejszamy padding wewnątrz linków, aby menu było bardziej kompaktowe */
     padding: 12px 20px;
   }
 
   .nav-icon {
-    /* Lekko zmniejszamy ikony */
     width: 24px;
     height: 24px;
   }
 }
 
-/* ... (cała dotychczasowa zawartość pliku) ... */
-
-/* ================================================= */
-/* --- STYLIZACJA FORMULARZA LOGOWANIA --- */
-/* ================================================= */
-
-/* Kontener centrujący formularz na stronie */
-/* ZAKTUALIZOWANE: Kontener centrujący formularz na stronie */
 .form-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* To centruje formularz w poziomie */
-  /* ZMIANA: Przesuwamy formularz w górę */
+  align-items: center;
   justify-content: flex-start;
-  padding-top: 10vh; /* Odstęp od góry ekranu (10% wysokości) */
+  padding-top: 10vh;
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
 }
 
-/* ZAKTUALIZOWANE: Styl samego formularza */
 .form-container form {
   width: 100%;
-  /* ZMIANA: Zwiększamy maksymalną szerokość formularza */
   max-width: 480px;
   padding: 30px;
   background-color: #ffffff;
@@ -157,10 +129,9 @@ nav:hover .nav-text {
 
 .form-container h1 {
   margin-bottom: 20px;
-  font-size: 2rem; /* Mniejszy nagłówek niż na stronie głównej */
+  font-size: 2rem;
 }
 
-/* Grupa (label + input) */
 .form-group {
   margin-bottom: 20px;
 }
@@ -172,30 +143,27 @@ nav:hover .nav-text {
   color: #4a5568;
 }
 
-/* Pola do wprowadzania tekstu */
 .form-group input {
   width: 100%;
   padding: 12px;
   border: 1px solid #cbd5e0;
   border-radius: 5px;
-  box-sizing: border-box; /* Ważne, aby padding nie "rozpychał" inputu */
+  box-sizing: border-box;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Efekt focus na polach input */
 .form-group input:focus {
   outline: none;
   border-color: #2b6cb0;
   box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.2);
 }
 
-/* Przycisk wysyłania */
 .submit-btn {
   width: 100%;
   padding: 12px;
   border: none;
   border-radius: 5px;
-  background-color: #2b6cb0; /* Ciemnoniebieski z naszej palety */
+  background-color: #2b6cb0;
   color: #ffffff;
   font-size: 1rem;
   font-weight: 600;
@@ -204,13 +172,12 @@ nav:hover .nav-text {
 }
 
 .submit-btn:hover {
-  background-color: #2c5282; /* Ciemniejszy odcień niebieskiego */
+  background-color: #2c5282;
 }
 
-/* Styl dla linku powrotnego */
 .back-link-container {
   margin-top: 20px;
-  text-align: center; /* Dodajemy wyśrodkowanie */
+  text-align: center;
 }
 
 .back-link-container a {
@@ -223,19 +190,13 @@ nav:hover .nav-text {
   text-decoration: underline;
 }
 
-/* ================================================= */
-/* --- STYLE DLA STRONY Z UWAGAMI (uwagi.html) --- */
-/* ================================================= */
-
-/* Stylujemy główny kontener, aby wycentrować treść */
 main {
   max-width: 800px;
-  margin: 0 auto; /* Centrowanie w poziomie */
+  margin: 0 auto;
   padding: 40px 20px;
   box-sizing: border-box;
 }
 
-/* Nagłówek artykułu */
 main > header {
   text-align: center;
   margin-bottom: 40px;
@@ -245,7 +206,7 @@ main > header {
 
 main > header h1 {
   margin: 0;
-  font-size: 2.5rem; /* Dopasowanie rozmiaru */
+  font-size: 2.5rem;
 }
 
 main > header p {
@@ -254,7 +215,6 @@ main > header p {
   margin-top: 10px;
 }
 
-/* Sekcje w artykule */
 article section {
   margin-bottom: 30px;
 }
@@ -269,12 +229,11 @@ article h2 {
 
 article p,
 article li {
-  line-height: 1.7; /* Lepsza czytelność tekstu */
+  line-height: 1.7;
   font-size: 16px;
   color: var(--text-color, #2d3748);
 }
 
-/* Styl dla cytatu */
 blockquote {
   border-left: 4px solid var(--link-hover-text, #2b6cb0);
   padding-left: 20px;
@@ -283,7 +242,6 @@ blockquote {
   color: var(--label-color, #4a5568);
 }
 
-/* Styl dla fragmentów kodu */
 code {
   background-color: var(--border-color, #e2e8f0);
   color: var(--text-color, #2d3748);
@@ -292,7 +250,6 @@ code {
   font-family: monospace;
 }
 
-/* Styl dla podsumowania */
 figure {
   margin: 20px 0;
   background-color: var(--nav-bg-color, #f7fafc);

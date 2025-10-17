@@ -1,6 +1,4 @@
-/* Definicja zmiennych kolorystycznych dla obu motywów */
 :root {
-  /* --- Motyw jasny (domyślny) --- */
   --bg-color: #f4f7f9;
   --form-bg-color: #ffffff;
   --text-color: #2d3748;
@@ -10,13 +8,10 @@
   --accent-color-dark: #4a5568;
   --button-bg-color: #4caf50;
   --button-hover-bg-color: #45a049;
-
-  /* Ustawienie schematu kolorów dla kontrolek przeglądarki */
   color-scheme: light;
 }
 
-/* --- Ustawienia dla motywu ciemnego --- */
-.theme-toggle-checkbox:checked ~ * {
+.dark-theme-variables {
   --bg-color: #1a202c;
   --form-bg-color: #2d3748;
   --text-color: #e2e8f0;
@@ -24,11 +19,60 @@
   --border-color: #4a5568;
   --input-bg-color: #1a202c;
   --accent-color-dark: #a0aec0;
-
   color-scheme: dark;
 }
 
-/* --- Ogólne style strony --- */
+@media (prefers-color-scheme: dark) {
+  .theme-toggle-checkbox:not(:checked) ~ * {
+    --bg-color: #1a202c;
+    --form-bg-color: #2d3748;
+    --text-color: #e2e8f0;
+    --label-color: #a0aec0;
+    --border-color: #4a5568;
+    --input-bg-color: #1a202c;
+    --accent-color-dark: #a0aec0;
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .theme-toggle-checkbox:checked ~ * {
+    --bg-color: #1a202c;
+    --form-bg-color: #2d3748;
+    --text-color: #e2e8f0;
+    --label-color: #a0aec0;
+    --border-color: #4a5568;
+    --input-bg-color: #1a202c;
+    --accent-color-dark: #a0aec0;
+    color-scheme: dark;
+  }
+}
+
+.sun-icon {
+  display: none;
+}
+.moon-icon {
+  display: inline-block;
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-toggle-checkbox:not(:checked) ~ * .sun-icon {
+    display: inline-block;
+  }
+  .theme-toggle-checkbox:not(:checked) ~ * .moon-icon {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .theme-toggle-checkbox:checked ~ * .sun-icon {
+    display: inline-block;
+  }
+  .theme-toggle-checkbox:checked ~ * .moon-icon {
+    display: none;
+  }
+}
+
 body {
   background-color: var(--bg-color);
   font-family: system-ui, sans-serif;
@@ -42,8 +86,38 @@ body {
   align-items: center;
   padding: 40px 20px;
 }
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1rem;
+}
+h1 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+.theme-toggle-checkbox {
+  display: none;
+}
+.theme-toggle-label {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+  line-height: 1;
+}
+.theme-toggle-label:hover {
+  transform: scale(1.2);
+}
 
-/* --- Nagłówek i przełącznik motywu --- */
+.contest-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
 .form-header {
   display: flex;
   justify-content: space-between;
@@ -59,7 +133,7 @@ h1 {
 }
 
 .theme-toggle-checkbox {
-  display: none; /* Ukrywamy checkbox */
+  display: none;
 }
 
 .theme-toggle-label {
@@ -72,7 +146,6 @@ h1 {
   transform: scale(1.2);
 }
 
-/* --- Główny kontener formularza --- */
 form {
   width: 100%;
   max-width: 500px;
@@ -85,12 +158,10 @@ form {
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* --- Grupowanie etykiet i pól --- */
 .form-group {
   margin-bottom: 1.25rem;
 }
 
-/* --- Style dla etykiet --- */
 label {
   display: block;
   margin-bottom: 0.5rem;
@@ -99,7 +170,6 @@ label {
   color: var(--label-color);
 }
 
-/* --- Ogólne style dla pól formularza --- */
 input[type='text'],
 input[type='email'],
 input[type='date'],
@@ -125,9 +195,8 @@ select:focus {
   box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
 
-/* --- Specyficzne style dla kontrolek --- */
 input[type='color'] {
-  height: 50px; /* Lepsza wysokość dla próbnika koloru */
+  height: 50px;
   cursor: pointer;
 }
 
@@ -162,7 +231,6 @@ input[type='checkbox'] {
   accent-color: var(--accent-color-dark);
 }
 
-/* --- Przycisk wysyłania --- */
 button[type='submit'] {
   width: 100%;
   padding: 0.8rem;
@@ -180,10 +248,9 @@ button[type='submit']:hover {
   background-color: var(--button-hover-bg-color);
 }
 
-/* Styl dla linku powrotnego */
 .back-link-container {
   margin-top: 20px;
-  text-align: center; /* Dodajemy wyśrodkowanie */
+  text-align: center;
 }
 
 .back-link-container a {
