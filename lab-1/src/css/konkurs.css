@@ -1,0 +1,197 @@
+/* Definicja zmiennych kolorystycznych dla obu motywów */
+:root {
+  /* --- Motyw jasny (domyślny) --- */
+  --bg-color: #f4f7f9;
+  --form-bg-color: #ffffff;
+  --text-color: #2d3748;
+  --label-color: #4a5568;
+  --border-color: #e2e8f0;
+  --input-bg-color: #ffffff;
+  --accent-color-dark: #4a5568;
+  --button-bg-color: #4caf50;
+  --button-hover-bg-color: #45a049;
+
+  /* Ustawienie schematu kolorów dla kontrolek przeglądarki */
+  color-scheme: light;
+}
+
+/* --- Ustawienia dla motywu ciemnego --- */
+.theme-toggle-checkbox:checked ~ * {
+  --bg-color: #1a202c;
+  --form-bg-color: #2d3748;
+  --text-color: #e2e8f0;
+  --label-color: #a0aec0;
+  --border-color: #4a5568;
+  --input-bg-color: #1a202c;
+  --accent-color-dark: #a0aec0;
+
+  color-scheme: dark;
+}
+
+/* --- Ogólne style strony --- */
+body {
+  background-color: var(--bg-color);
+  font-family: system-ui, sans-serif;
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contest-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* --- Nagłówek i przełącznik motywu --- */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.theme-toggle-checkbox {
+  display: none; /* Ukrywamy checkbox */
+}
+
+.theme-toggle-label {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.theme-toggle-label:hover {
+  transform: scale(1.2);
+}
+
+/* --- Główny kontener formularza --- */
+form {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background-color: var(--form-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* --- Grupowanie etykiet i pól --- */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+/* --- Style dla etykiet --- */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--label-color);
+}
+
+/* --- Ogólne style dla pól formularza --- */
+input[type='text'],
+input[type='email'],
+input[type='date'],
+input[type='number'],
+input[type='color'],
+select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 16px;
+  background-color: var(--input-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--text-color);
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s,
+    color 0.3s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+/* --- Specyficzne style dla kontrolek --- */
+input[type='color'] {
+  height: 50px; /* Lepsza wysokość dla próbnika koloru */
+  cursor: pointer;
+}
+
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
+  color: var(--label-color);
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.radio-group label,
+.checkbox-group label {
+  margin: 0 0 0 0.5rem;
+  font-weight: normal;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  cursor: pointer;
+  accent-color: var(--accent-color-dark);
+}
+
+/* --- Przycisk wysyłania --- */
+button[type='submit'] {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-bg-color);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type='submit']:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+/* Styl dla linku powrotnego */
+.back-link-container {
+  margin-top: 20px;
+  text-align: center; /* Dodajemy wyśrodkowanie */
+}
+
+.back-link-container a {
+  color: #4a5568;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back-link-container a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,313 @@
+/* Odświeżone style dla trybu jasnego (light mode) */
+
+body {
+  margin: 0;
+  padding: 0 20px 0 90px; /* Twoje ustawienie dla desktopu */
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+  color: #2d3748;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* --- STYLIZACJA WYSUWANEJ NAWIGACJI --- */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: -175px; /* Twoje ustawienie dla desktopu */
+  width: 250px;
+  height: 100vh;
+  background-color: #f7fafc;
+  border-right: 1px solid #edf2f7;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.05);
+  transition: left 0.4s ease-in-out;
+  z-index: 1000;
+}
+
+/* ... reszta stylów pozostaje bez zmian ... */
+
+nav:hover {
+  left: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 60px 0 0 0;
+  margin: 0;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 25px;
+  color: #4a5568;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  overflow: hidden;
+}
+
+nav a:hover {
+  background-color: #ebf8ff;
+  color: #2b6cb0;
+}
+
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  filter: grayscale(100%) brightness(50%) sepia(100%) hue-rotate(180deg);
+}
+
+nav a:hover .nav-icon {
+  transform: scale(1.1);
+}
+
+.nav-text {
+  opacity: 0;
+  visibility: hidden;
+  white-space: nowrap;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+nav:hover .nav-text {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.2s;
+}
+
+/* ================================================= */
+/* --- SEKCJA RESPONSYWNOŚCI (MEDIA QUERIES) --- */
+/* ================================================= */
+
+/* Style dla ekranów o szerokości do 768px (tablety i telefony) */
+@media (max-width: 768px) {
+  body {
+    /* Zmniejszamy padding, aby zrobić więcej miejsca na treść */
+    padding: 0 15px 0 75px;
+  }
+
+  h1 {
+    /* Zmniejszamy rozmiar nagłówka, aby nie dominował na małym ekranie */
+    font-size: 2.2rem;
+    margin-top: 30px;
+  }
+
+  nav {
+    /* Zmniejszamy szerokość wysuniętego menu, aby nie zajmowało całego ekranu */
+    width: 220px;
+    /* Dostosowujemy pozycję zwiniętego menu, aby widoczny fragment był węższy */
+    left: -160px; /* (220px - 60px widocznego fragmentu) */
+  }
+
+  nav a {
+    /* Zmniejszamy padding wewnątrz linków, aby menu było bardziej kompaktowe */
+    padding: 12px 20px;
+  }
+
+  .nav-icon {
+    /* Lekko zmniejszamy ikony */
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ... (cała dotychczasowa zawartość pliku) ... */
+
+/* ================================================= */
+/* --- STYLIZACJA FORMULARZA LOGOWANIA --- */
+/* ================================================= */
+
+/* Kontener centrujący formularz na stronie */
+/* ZAKTUALIZOWANE: Kontener centrujący formularz na stronie */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* To centruje formularz w poziomie */
+  /* ZMIANA: Przesuwamy formularz w górę */
+  justify-content: flex-start;
+  padding-top: 10vh; /* Odstęp od góry ekranu (10% wysokości) */
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ZAKTUALIZOWANE: Styl samego formularza */
+.form-container form {
+  width: 100%;
+  /* ZMIANA: Zwiększamy maksymalną szerokość formularza */
+  max-width: 480px;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-container h1 {
+  margin-bottom: 20px;
+  font-size: 2rem; /* Mniejszy nagłówek niż na stronie głównej */
+}
+
+/* Grupa (label + input) */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+/* Pola do wprowadzania tekstu */
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ważne, aby padding nie "rozpychał" inputu */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efekt focus na polach input */
+.form-group input:focus {
+  outline: none;
+  border-color: #2b6cb0;
+  box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.2);
+}
+
+/* Przycisk wysyłania */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2b6cb0; /* Ciemnoniebieski z naszej palety */
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #2c5282; /* Ciemniejszy odcień niebieskiego */
+}
+
+/* Styl dla linku powrotnego */
+.back-link-container {
+  margin-top: 20px;
+  text-align: center; /* Dodajemy wyśrodkowanie */
+}
+
+.back-link-container a {
+  color: #4a5568;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back-link-container a:hover {
+  text-decoration: underline;
+}
+
+/* ================================================= */
+/* --- STYLE DLA STRONY Z UWAGAMI (uwagi.html) --- */
+/* ================================================= */
+
+/* Stylujemy główny kontener, aby wycentrować treść */
+main {
+  max-width: 800px;
+  margin: 0 auto; /* Centrowanie w poziomie */
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Nagłówek artykułu */
+main > header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  padding-bottom: 20px;
+}
+
+main > header h1 {
+  margin: 0;
+  font-size: 2.5rem; /* Dopasowanie rozmiaru */
+}
+
+main > header p {
+  font-size: 1.1rem;
+  color: var(--label-color, #4a5568);
+  margin-top: 10px;
+}
+
+/* Sekcje w artykule */
+article section {
+  margin-bottom: 30px;
+}
+
+article h2 {
+  font-size: 1.8rem;
+  color: var(--text-color, #2d3748);
+  border-bottom: 2px solid var(--link-hover-bg, #ebf8ff);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+article p,
+article li {
+  line-height: 1.7; /* Lepsza czytelność tekstu */
+  font-size: 16px;
+  color: var(--text-color, #2d3748);
+}
+
+/* Styl dla cytatu */
+blockquote {
+  border-left: 4px solid var(--link-hover-text, #2b6cb0);
+  padding-left: 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: var(--label-color, #4a5568);
+}
+
+/* Styl dla fragmentów kodu */
+code {
+  background-color: var(--border-color, #e2e8f0);
+  color: var(--text-color, #2d3748);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* Styl dla podsumowania */
+figure {
+  margin: 20px 0;
+  background-color: var(--nav-bg-color, #f7fafc);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+figcaption {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: var(--text-color, #2d3748);
+}
+
+figure ul {
+  padding-left: 20px;
+}

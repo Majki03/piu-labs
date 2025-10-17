@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uwagi o formularzach HTML - Lab 1</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Moje uwagi o formularzach HTML5</h1>
+        <p>Refleksje na temat ich zalet, wad i zastosowań.</p>
+      </header>
+
+      <article>
+        <section>
+          <h2>Zalety i mocne strony</h2>
+          <p>
+            Formularze oparte wyłącznie na HTML5 to fundament interaktywności w
+            sieci. Ich największą siłą jest
+            <strong>prostota i dostępność</strong>. Działają wszędzie, na każdej
+            przeglądarce, bez zależności od zewnętrznych bibliotek. Wbudowane
+            typy pól, takie jak <code>&lt;input type="date"&gt;</code> czy
+            <code>&lt;input type="color"&gt;</code>, dostarczają natywne,
+            zoptymalizowane pod kątem danego systemu kontrolki, co znacząco
+            poprawia doświadczenie użytkownika, zwłaszcza na urządzeniach
+            mobilnych.
+          </p>
+          <blockquote>
+            "Wbudowana walidacja za pomocą atrybutów jak `required`, `minlength`
+            czy `pattern` pozwala na błyskawiczne tworzenie prostych, ale
+            bezpiecznych formularzy bez pisania ani jednej linijki JavaScript."
+          </blockquote>
+        </section>
+
+        <section>
+          <h2>Ograniczenia i wady</h2>
+          <p>
+            Główną wadą czystych formularzy HTML jest ich
+            <strong>ograniczona elastyczność</strong>. Stylizowanie niektórych
+            elementów, jak pole do wysyłania plików
+            <code>&lt;input type="file"&gt;</code> czy lista rozwijana
+            <code>&lt;select&gt;</code>, jest bardzo trudne i niekonsekwentne
+            między przeglądarkami. Brakuje również możliwości tworzenia
+            dynamicznych, wieloetapowych formularzy czy bardziej złożonej logiki
+            walidacji (np. sprawdzania, czy dwa pola haseł są identyczne) bez
+            wsparcia JavaScript.
+          </p>
+        </section>
+
+        <section>
+          <h2>Kiedy warto je stosować, a kiedy nie?</h2>
+          <figure>
+            <figcaption>Podsumowanie zastosowań:</figcaption>
+            <ul>
+              <li>
+                <strong>Tak, warto:</strong> Dla prostych formularzy, takich jak
+                logowanie, newsletter, formularz kontaktowy czy ankieta.
+                Wszędzie tam, gdzie liczy się szybkość wdrożenia i maksymalna
+                kompatybilność.
+              </li>
+              <li>
+                <strong>Nie, lepiej unikać:</strong> W przypadku skomplikowanych
+                aplikacji, takich jak formularze rezerwacyjne, kreatory czy
+                rozbudowane panele konfiguracyjne, które wymagają dynamicznej
+                interakcji, warunkowego pokazywania pól i zaawansowanej
+                walidacji po stronie klienta.
+              </li>
+            </ul>
+          </figure>
+        </section>
+      </article>
+
+      <footer>
+        <div class="back-link-container">
+          <a href="../../index.html">Powrót do strony głównej</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

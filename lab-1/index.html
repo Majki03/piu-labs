@@ -2,11 +2,51 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <title>Lab 1</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 1 - Strona główna</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/main.css" />
   </head>
   <body>
-    <h1>Lab 1</h1>
-    <a href="..">Powrót</a>
+    <h1>Michał Cudzich</h1>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="src/pages/login.html">
+            <span class="nav-text">Logowanie</span>
+            <img
+              class="nav-icon"
+              src="src/images/logowanie_ikona.png"
+              alt="Ikona logowania"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="src/pages/konkurs.html">
+            <span class="nav-text">Konkurs</span>
+            <img
+              class="nav-icon"
+              src="src/images/konkurs_ikona.png"
+              alt="Ikona konkursu"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="src/pages/uwagi.html">
+            <span class="nav-text">Uwagi</span>
+            <img
+              class="nav-icon"
+              src="src/images/uwagi_ikona.png"
+              alt="Ikona uwag"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="back-link-container">
+      <a href="..">Powrót do listy laboratoriów</a>
+    </div>
   </body>
 </html>
