@@ -33,6 +33,12 @@ body {
   --color-primary-dark: #0056b3;
   --color-promo: #007bff;
   --border-color: #007bff;
+
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
@@ -68,7 +74,7 @@ body {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .product-card:has(#color-blue:checked) .polo-image[data-color='blue'],
@@ -150,9 +156,12 @@ body {
   border: 3px solid #eee;
   transition: all 0.2s ease;
 }
+
 .color-swatch:hover {
   border-color: #ccc;
+  transform: scale(1.15);
 }
+
 .color-swatch.blue {
   background-color: #007bff;
 }
@@ -170,6 +179,40 @@ body {
   box-shadow: 0 0 0 3px var(--color-primary);
 }
 
+#size-picker div {
+  position: relative;
+}
+
+#size-picker div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-primary);
+  border-radius: 6px;
+  z-index: 1;
+
+  transform: translateX(calc(40px + 0.75rem));
+
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    background-color 0.3s ease;
+}
+
+#size-picker div:has(#size-s:checked)::before {
+  transform: translateX(0);
+}
+#size-picker div:has(#size-m:checked)::before {
+  transform: translateX(calc(40px + 0.75rem));
+}
+#size-picker div:has(#size-l:checked)::before {
+  transform: translateX(calc(2 * (40px + 0.75rem)));
+}
+#size-picker div:has(#size-xl:checked)::before {
+  transform: translateX(calc(3 * (40px + 0.75rem)));
+}
+
 #size-picker label {
   display: grid;
   place-items: center;
@@ -180,12 +223,19 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+
+  box-sizing: border-box;
+
+  position: relative;
+  z-index: 2;
 }
 #size-picker label:hover {
   border-color: #aaa;
+  transform: scale(1.05);
 }
+
 #size-picker input[type='radio']:checked + label {
-  background-color: var(--color-primary);
+  background-color: transparent;
   border-color: var(--color-primary);
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -196,6 +246,7 @@ body {
   font-weight: 300;
   margin: auto 0 1rem 0;
 }
+
 .buy-button {
   width: 100%;
   padding: 0.85rem;
@@ -206,10 +257,11 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .buy-button:hover {
   background-color: var(--color-primary-dark);
+  transform: scale(1.02);
 }
 
 .back-link-container {
