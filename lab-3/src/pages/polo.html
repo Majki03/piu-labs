@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karta Produktu - Polo</title>
+    <link rel="stylesheet" href="../css/polo.css" />
+  </head>
+  <body>
+    <main class="product-container">
+      <article class="product-card">
+        <section class="product-image">
+          <div class="image-frame">
+            <img
+              src="../images/polo/polo_b.png"
+              alt="Niebieska koszulka polo"
+              class="polo-image"
+              data-color="blue"
+            />
+            <img
+              src="../images/polo/polo_r.png"
+              alt="Czerwona koszulka polo"
+              class="polo-image"
+              data-color="red"
+            />
+            <img
+              src="../images/polo/polo_g.png"
+              alt="Zielona koszulka polo"
+              class="polo-image"
+              data-color="green"
+            />
+            <img
+              src="../images/polo/polo_y.png"
+              alt="Żółta koszulka polo"
+              class="polo-image"
+              data-color="yellow"
+            />
+          </div>
+        </section>
+
+        <section class="product-details">
+          <header class="product-header">
+            <h1>Koszulka Polo</h1>
+            <span class="promo-badge">Promocja!</span>
+          </header>
+
+          <p class="product-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+            quis adipisci maiores.
+          </p>
+
+          <fieldset class="product-options" id="color-picker">
+            <legend>Kolor</legend>
+            <div>
+              <input
+                type="radio"
+                name="color"
+                value="blue"
+                id="color-blue"
+                checked
+              />
+              <label
+                for="color-blue"
+                class="color-swatch blue"
+                title="Niebieski"
+              ></label>
+
+              <input type="radio" name="color" value="red" id="color-red" />
+              <label
+                for="color-red"
+                class="color-swatch red"
+                title="Czerwony"
+              ></label>
+
+              <input type="radio" name="color" value="green" id="color-green" />
+              <label
+                for="color-green"
+                class="color-swatch green"
+                title="Zielony"
+              ></label>
+
+              <input
+                type="radio"
+                name="color"
+                value="yellow"
+                id="color-yellow"
+              />
+              <label
+                for="color-yellow"
+                class="color-swatch yellow"
+                title="Żółty"
+              ></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="product-options" id="size-picker">
+            <legend>Rozmiar</legend>
+            <div>
+              <input type="radio" name="size" value="s" id="size-s" />
+              <label for="size-s">S</label>
+
+              <input type="radio" name="size" value="m" id="size-m" checked />
+              <label for="size-m">M</label>
+
+              <input type="radio" name="size" value="l" id="size-l" />
+              <label for="size-l">L</label>
+
+              <input type="radio" name="size" value="xl" id="size-xl" />
+              <label for="size-xl">XL</label>
+            </div>
+          </fieldset>
+
+          <div class="product-price">59,99 zł</div>
+
+          <button type="button" class="buy-button">Do koszyka</button>
+        </section>
+      </article>
+
+      <div class="back-link-container">
+        <a href="../../index.html" class="back-link">&larr; Powrót do Lab 3</a>
+      </div>
+    </main>
+  </body>
+</html>
