@@ -2,11 +2,67 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <title>Lab 4</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board - Lab 4</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <script src="src/js/app.js" defer></script>
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <header>
+      <h1>Tablica Kanban</h1>
+      <div class="back-link">
+        <a href=".." class="btn-back">Powrót</a>
+      </div>
+    </header>
+
+    <main class="board">
+      <section class="column" id="todo">
+        <header class="column-header">
+          <h2>Do zrobienia <span class="task-count">(0)</span></h2>
+          <div class="column-actions">
+            <button class="sort-col-btn" title="Sortuj alfabetycznie">
+              ⬇️
+            </button>
+            <button class="color-col-btn" title="Losuj kolory w tej kolumnie">
+              🎨
+            </button>
+          </div>
+        </header>
+        <div class="task-list"></div>
+        <button class="add-card-btn">+ Dodaj kartę</button>
+      </section>
+
+      <section class="column" id="inprogress">
+        <header class="column-header">
+          <h2>W trakcie <span class="task-count">(0)</span></h2>
+          <div class="column-actions">
+            <button class="sort-col-btn" title="Sortuj alfabetycznie">
+              ⬇️
+            </button>
+            <button class="color-col-btn" title="Losuj kolory w tej kolumnie">
+              🎨
+            </button>
+          </div>
+        </header>
+        <div class="task-list"></div>
+        <button class="add-card-btn">+ Dodaj kartę</button>
+      </section>
+
+      <section class="column" id="done">
+        <header class="column-header">
+          <h2>Zrobione <span class="task-count">(0)</span></h2>
+          <div class="column-actions">
+            <button class="sort-col-btn" title="Sortuj alfabetycznie">
+              ⬇️
+            </button>
+            <button class="color-col-btn" title="Losuj kolory w tej kolumnie">
+              🎨
+            </button>
+          </div>
+        </header>
+        <div class="task-list"></div>
+        <button class="add-card-btn">+ Dodaj kartę</button>
+      </section>
+    </main>
   </body>
 </html>
